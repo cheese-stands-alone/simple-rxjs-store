@@ -10,13 +10,7 @@ Simple store to hold application state.
 ```typescript
 import { Store } from 'simple-rxjs-store'
 
-interface MyState {
-  list: Array<number>,
-  foo: string,
-  bar: { cat: string }
-}
-
-const myStore = new Store({ list: [], foo: 'foo', bar: { cat: 'mine' } } )
+const myStore = new Store({ list: [1], foo: 'foo', bar: { cat: 'mine' } } )
 
 myStore.select('list').subscribe(/*do something with your array of numbers*/)
 myStore.select(state => state.bar.cat).subscribe(/*do something with your cat*/)
